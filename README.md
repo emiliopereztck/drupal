@@ -14,12 +14,27 @@ Se puede pensar en hook_menu como un "evento", y todas las devoluciones de llama
 
 ###Ventajas de los eventos
 
-####Orientado a objetos. 
+**Orientado a objetos.**
+
 Los hooks todavía se basan en el código procedural, lo que significa que la prueba unitaria es posible, pero más complicada. Como los eventos están orientados a objetos y admiten la inyección de dependencias, puede realizar una prueba unitaria de su evento. El código orientado a objetos presenta una mejor experiencia para el desarrollador que trabajar con funciones procedurales.
 
-####Detener la propagación. 
+**Detener la propagación.**
+
 Al igual que un evento de JavaScript, el Event Dispatcher permite que cualquier evento individual detenga la propagación, evitando que se activen los listeners de eventos posteriores. Esto no se puede hacer por ejemplo con un hook_alter.
 
-####Disparar dos veces el mismo evento. 
+**Disparar dos veces el mismo evento.**
+
 De forma predeterminada, con el sistema de hooks, un hook se activa según la ordenación alfabética. Es decir, barfoo_some_hook irá antes que foobar_some_hook. Si se desea modificar el orden en el que se activan los hooks, puede modificar el peso del módulo en la tabla del sistema, que se aplica globalmente a todos los hooks, o implementar hook_module_implements_alter para reordenar por hook. 
 Sin embargo, lo que no puedes hacer es disparar el hook dos veces. Con el sistema de eventos, puede registrar dos listeners para un evento, desde un mismo módulo. Esto significa que puedes ejecutar tu event listener al principio y al final cuando se despache el evento.
+
+###Hooks en D7 y D8
+
+Drupal 7:
+```
+module_invoke_all('my_event_name', $some_arbitrary_parameter);
+```
+Drupal 8:
+```
+\Drupal::moduleHandler()->invokeAll('my_event_name', [$some_arbitrary_parameter]);
+```
+

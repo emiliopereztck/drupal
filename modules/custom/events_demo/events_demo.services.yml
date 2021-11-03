@@ -1,0 +1,15 @@
+services:
+  # Subscriber to the event we dispatch in hook_entity_view, with hook_event_dispatcher dependency.
+  events_demo_entity_view:
+    class: Drupal\events_demo\EventSubscriber\EntityViewSubscriber
+    tags:
+      - {name: 'event_subscriber'}
+  # Subscriber to the event we dispatch in hook_user_login.
+  events_demo_user_login:
+    class: \Drupal\events_demo\EventSubscriber\UserLoginSubscriber
+    arguments:
+      - '@database'
+      - '@date.formatter'
+      - '@messenger'
+    tags:
+      - { name: 'event_subscriber' }

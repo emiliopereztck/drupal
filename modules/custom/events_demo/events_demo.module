@@ -1,0 +1,15 @@
+<?php
+
+use Drupal\events_demo\Event\UserLoginEvent;
+
+/**
+* Implements hook_user_login().
+*/
+function events_demo_user_login($account) {
+
+$event = new UserLoginEvent($account);
+
+// Get the event_dispatcher server and dispatch the event.
+$event_dispatcher = \Drupal::service('event_dispatcher');
+$event_dispatcher->dispatch(UserLoginEvent::EVENT_NAME, $event);
+}
