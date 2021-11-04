@@ -1,0 +1,9 @@
+{
+    "name": "tck/events_demo",
+    "description": "Módulo demo para la charla de hooks y eventos",
+    "type": "drupal-module",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "drupal/hook_event_dispatcher"
+    }
+}
