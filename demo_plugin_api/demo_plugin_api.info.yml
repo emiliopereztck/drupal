@@ -1,0 +1,6 @@
+name: 'TCK Plugin API Demo'
+type: module
+description: 'Extensible demo by Plugin API'
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: 'The Cocktail Plugins'

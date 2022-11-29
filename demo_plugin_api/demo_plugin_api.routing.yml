@@ -1,0 +1,8 @@
+
+demo_plugin_api.house_demo:
+  path: '/demo-plugin-api/houseDemo/{name}'
+  defaults:
+    _controller: '\Drupal\demo_plugin_api\Controller\HouseController::houseDemo'
+    _title: 'HouseDemo'
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,4 @@
+services:
+  plugin.manager.house_plugin:
+    class: Drupal\demo_plugin_api\Plugin\HousePluginManager
+    parent: default_plugin_manager

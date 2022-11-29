@@ -1,0 +1,6 @@
+name: 'TCK Plugins for House Example'
+type: module
+description: 'Demo plugin implementation for our House Plugin'
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: 'The Cocktail Plugins'

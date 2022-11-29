@@ -1,0 +1,13 @@
+{
+    "name": "demo_jack_plugin",
+    "type": "drupal-module",
+    "description": "Demo plugin implementation for our House Plugin",
+    "keywords": [
+    ],
+    "homepage": "https://www.drupal.org/project/demo_jack_plugin",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/demo_jack_plugin",
+        "source": "http://cgit.drupalcode.org/demo_jack_plugin",
+    },
+}

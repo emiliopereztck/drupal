@@ -1,0 +1,13 @@
+{
+    "name": "demo_plugin_api",
+    "type": "drupal-module",
+    "description": "Extensible demo by Plugin API",
+    "keywords": [
+    ],
+    "homepage": "https://www.drupal.org/project/demo_plugin_api",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/demo_plugin_api",
+        "source": "http://cgit.drupalcode.org/demo_plugin_api",
+    },
+}

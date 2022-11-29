@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains demo_jack_plugin.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function demo_jack_plugin_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the demo_jack_plugin module.
+    case 'help.page.demo_jack_plugin':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Demo plugin implementation for our House Plugin') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function demo_jack_plugin_theme() {
+  return [
+    'demo_jack_plugin' => [
+      'render element' => 'children',
+    ],
+  ];
+}
